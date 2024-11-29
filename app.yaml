@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/buildpacks/builder:v1'
+  args: ['--builder', 'gcr.io/buildpacks/builder:v1', '--path', './']
+images:
+- 'gcr.io/[swastik-ocr]/my-python-api'
