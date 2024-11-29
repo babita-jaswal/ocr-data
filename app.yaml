@@ -1,5 +1,6 @@
-steps:
-- name: 'gcr.io/buildpacks/builder:v1'
-  args: ['--builder', 'gcr.io/buildpacks/builder:v1', '--path', './']
-images:
-- 'gcr.io/[swastik-ocr]/my-python-api'
+runtime: python38
+
+entrypoint: gunicorn -b :$PORT main:app  # Use the appropriate entry point (change "main:app" if needed)
+
+env_variables:
+  GOOGLE_CLOUD_PROJECT: "swastik-ocr"
